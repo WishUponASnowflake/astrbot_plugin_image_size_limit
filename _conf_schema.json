@@ -1,0 +1,7 @@
+{
+  "max_size": {
+    "description": "最大图片尺寸",
+    "type": "int",
+    "hint": "最大图片尺寸，单位为字节。"
+  }
+}

@@ -1,9 +1,3 @@
-# helloworld
+# astrbot_plugin_image_size_limit
 
-AstrBot 插件模板
-
-A template plugin for AstrBot plugin feature
-
-# 支持
-
-[帮助文档](https://astrbot.app)
+AstrBot 插件 限制图片尺寸
