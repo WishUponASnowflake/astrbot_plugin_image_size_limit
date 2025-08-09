@@ -7,7 +7,7 @@ from astrbot.core.message.components import Plain
 from astrbot.core.message.message_event_result import MessageChain
 from astrbot.core.provider.entities import ProviderRequest
 
-@register("astrbot_plugin_image_size_limit", "YourName", "限制图片尺寸", "0.1")
+@register("astrbot_plugin_image_size_limit", "ctrlkk", "限制图片尺寸", "0.1")
 class MyPlugin(Star):
     max_size: int = 1 * 1024 * 200
     config: AstrBotConfig
