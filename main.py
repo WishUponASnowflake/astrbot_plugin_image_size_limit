@@ -20,12 +20,8 @@ class MyPlugin(Star):
         self.max_size = self.config.get("max_size", 204800)
         logger.info(f"最大图片尺寸限制：{self.max_size}字节")
 
-    @filter.permission_type(filter.PermissionType.ADMIN)
-    @filter.command("image-size")
-    def set_image_size(self, event: AstrMessageEvent, size: int):
-        self.max_size = size
-        logger.info(f"限制图片尺寸为{size}字节")
-        yield event.plain_result(f"当前图片尺寸限制为{self.max_size}字节")
+    async def terminate(self):
+        """可选择实现异步的插件销毁方法，当插件被卸载/停用时会调用。"""
 
     @filter.on_llm_request()
     async def my_custom_hook_1(self, event: AstrMessageEvent, req: ProviderRequest):
@@ -35,6 +31,3 @@ class MyPlugin(Star):
             if size > self.max_size:
                 await event.send(MessageChain([Plain(f"图片尺寸过大，请上传小于 {self.max_size}字节 的图片。")]))
                 event.stop_event()
-
-    async def terminate(self):
-        """可选择实现异步的插件销毁方法，当插件被卸载/停用时会调用。"""
