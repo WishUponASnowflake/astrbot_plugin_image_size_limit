@@ -1,5 +1,5 @@
 name: astrbot_plugin_image_size_limit
 desc: 限制图片尺寸
-version: v0.1
+version: v0.2
 author: ctrlkk
 repo: https://github.com/ctrlkk/astrbot_plugin_image_size_limit
